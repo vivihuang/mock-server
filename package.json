@@ -1,6 +1,11 @@
 {
   "name": "mock-server",
   "version": "0.0.1",
+  "description": "Use restify to build a mock server for dev.",
+  "main": "server.js",
+  "repository": "https://github.com/vivihuang/mock-server.git",
+  "author": "Vivi Huang",
+  "license": "none",
   "scripts": {
     "start": "NODE_PATH=. nodemon server.js --exec babel-node"
   },
@@ -12,6 +17,5 @@
     "nodemon": "^1.11.0",
     "require-dir": "^0.3.1",
     "restify": "^4.3.0"
-  },
-  "license": "none"
+  }
 }
