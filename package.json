@@ -6,8 +6,27 @@
   "repository": "https://github.com/vivihuang/mock-server.git",
   "author": "Vivi Huang",
   "license": "none",
+  "ava": {
+    "files": [
+      "**/*.spec.js"
+    ],
+    "source": [
+      "**/*.{js}",
+      "!dist/**/*"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "tap": true,
+    "powerAssert": false,
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit"
+  },
   "scripts": {
-    "start": "NODE_PATH=. nodemon server.js --exec babel-node"
+    "start": "NODE_PATH=. nodemon server.js --exec babel-node",
+    "test": "ava"
   },
   "dependencies": {
     "babel-cli": "^6.23.0",
@@ -17,5 +36,12 @@
     "nodemon": "^1.11.0",
     "require-dir": "^0.3.1",
     "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-polyfill": "^6.23.0",
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1"
   }
 }
