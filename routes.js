@@ -2,7 +2,7 @@ import requireDir from 'require-dir'
 import { each, isFunction, isPlainObject } from 'lodash'
 
 module.exports = (server) => {
-  const resources = requireDir('./resources', {recurse: true})
+  const resources = requireDir('./resources', { recurse: true })
   const buildRouters = (resource, resourceName) => {
     each(resource, (operation, operationName) => {
       if (/^_/.test(operationName)) {
