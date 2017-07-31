@@ -3271,6 +3271,12 @@ resolve-from@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
 
+restify-cors-middleware@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/restify-cors-middleware/-/restify-cors-middleware-1.0.0.tgz#bdaacbb6a54e8e0ddd8f857900964274909cbe04"
+  dependencies:
+    assert-plus "^1.0.0"
+
 restify-errors@^4.2.3:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/restify-errors/-/restify-errors-4.3.0.tgz#ec90f30934d7f3119135181dfc303e30be601abe"

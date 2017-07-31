@@ -36,7 +36,8 @@
     "lodash": "^4.17.4",
     "nodemon": "^1.11.0",
     "require-dir": "^0.3.2",
-    "restify": "^5.0.1"
+    "restify": "^5.0.1",
+    "restify-cors-middleware": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^0.21.0",
