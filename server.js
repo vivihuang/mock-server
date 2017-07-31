@@ -1,5 +1,8 @@
+import { addPath } from 'app-module-path'
 import restify from 'restify'
 import routes from './routes'
+
+addPath(__dirname)
 
 const server = restify.createServer({
   name: 'mock-server',
