@@ -9,13 +9,12 @@ const server = restify.createServer({
   version: '1.0.0'
 })
 
-server.use(restify.acceptParser(server.acceptable))
-server.use(restify.queryParser())
-server.use(restify.bodyParser())
+server.use(restify.plugins.acceptParser(server.acceptable))
+server.use(restify.plugins.queryParser())
+server.use(restify.plugins.bodyParser())
 
-server.use(restify.authorizationParser())
-server.use(restify.dateParser())
-server.use(restify.CORS())
+server.use(restify.plugins.authorizationParser())
+server.use(restify.plugins.dateParser())
 server.pre(restify.pre.sanitizePath())
 server.pre((req, res, next) => {
   res.charSet('utf-8')
