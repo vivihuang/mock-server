@@ -9,7 +9,7 @@ module.exports = (server) => {
         return
       }
       if (isFunction(operation)) {
-        server[operationName](resourceName, operation)
+        server[operationName](`/${resourceName}`, operation)
       } else if (isPlainObject(operation)) {
         buildRouters(operation, resourceName + '/' + operationName.replace(/\{(.*?)\}/, ':$1'))
       }
