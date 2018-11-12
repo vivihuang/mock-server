@@ -12,7 +12,7 @@ for (i; i < totalElements; i += 1) {
     fileName: `华东雨天障碍物数据2018.10.${i}`,
     type: random(0, 1) ? 'image' : 'video',
     size: random(1, 10000),
-    createdDate: moment().subtract(i, 'minutes').valueOf(),
+    createdDate: moment().subtract(i, 'minutes').format(),
     creator: faker.name.firstName() + faker.name.lastName(),
   });
 }
