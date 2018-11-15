@@ -2,8 +2,7 @@ import faker from 'faker/locale/zh_CN';
 import moment from 'moment';
 import { random } from 'lodash';
 
-const SHARE_TYPES = ['group', 'public', 'tenant'];
-const TASK_TYPES = ['targetSelection', 'imageClassification', 'imageSegmentation'];
+import { SHARE_TYPES, TASK_TYPES } from './constants';
 
 const totalElements = random(0, 100);
 
