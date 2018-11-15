@@ -17,11 +17,16 @@ for (i; i < totalElements; i += 1) {
   });
 }
 
-export const generateMaterialList = (currentPage, pageSize) => {
+export const generateMaterials = (currentPage, pageSize) => {
   const startPos = (currentPage - 1) * pageSize;
   const endPos = currentPage * pageSize;
   const content = totalElements >= startPos
     ? list.slice(startPos, endPos)
     : [];
-  return { totalElements, content };
+  return content;
 };
+
+export const generateMaterialList = (currentPage, pageSize) => ({
+    totalElements,
+    content: generateMaterials(currentPage, pageSize)
+});
