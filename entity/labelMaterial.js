@@ -2,28 +2,30 @@ import faker from 'faker/locale/zh_CN';
 import moment from 'moment';
 import { random } from 'lodash';
 
-import { SHARE_TYPES, TASK_TYPES } from './constants';
-
-const totalElements = random(0, 100);
+const totalElements = random(1, 100);
 
 const list = [];
 let i = 0;
 for (i; i < totalElements; i += 1) {
   list.push({
     id: faker.random.uuid(),
-    name: `训练-华东晴天障碍物数据2018.11.${i}`,
-    shareType: SHARE_TYPES[random(0, 2)],
-    taskType: TASK_TYPES[random(0, 2)],
-    size: random(1, 10000),
+    name: `华东雨天障碍物图片2018.10.${i}`,
+    type: 'image',
     createdDate: moment().subtract(i, 'minutes').format(),
+    url: faker.image.imageUrl(),
   });
 }
 
-export const generateTrainingDatasetList = (currentPage, pageSize) => {
+const generateImages = (currentPage, pageSize) => {
   const startPos = (currentPage - 1) * pageSize;
   const endPos = currentPage * pageSize;
   const content = totalElements >= startPos
     ? list.slice(startPos, endPos)
     : [];
-  return { total: totalElements, content };
+  return content;
 };
+
+export const generateImageList = (currentPage, pageSize) => ({
+  total: totalElements,
+  content: generateImages(currentPage, pageSize)
+});
