@@ -1,4 +1,4 @@
-import { generateMaterialList } from 'entity/materialList';
+import { generateMaterialList } from 'entity/labelMaterialList';
 
 module.exports = (req, res, next) => {
   const { pageSize = 30, currentPage = 1 } = req.query;

@@ -27,6 +27,6 @@ export const generateMaterials = (currentPage, pageSize) => {
 };
 
 export const generateMaterialList = (currentPage, pageSize) => ({
-    totalElements,
+    total: totalElements,
     content: generateMaterials(currentPage, pageSize)
 });
